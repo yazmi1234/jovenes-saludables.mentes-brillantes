@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Jóvenes Saludables, Mentes Brillantes</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(to right, #a8edea, #fed6e3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .contenedor {
+      background: white;
+      width: 70%; /* más ancho */
+      max-width: 900px;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+
+    h1 {
+      color: #2f855a;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      text-align: left;
+      margin: 10px 0 5px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    button {
+      background: linear-gradient(to right, #38a169, #3182ce);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background: linear-gradient(to right, #2f855a, #2b6cb0);
+    }
+
+    .imagenes {
+      display: flex;
+      justify-content: space-around;
+      margin: 20px 0;
+    }
+
+    .imagenes img {
+      width: 120px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <!-- LOGIN -->
+  <div class="contenedor" id="login">
+    <h1>Iniciar Sesión</h1>
+    <label for="usuario">Usuario:</label>
+    <input type="text" id="usuario" placeholder="Usuario">
+
+    <label for="password">Contraseña:</label>
+    <input type="password" id="password" placeholder="Contraseña">
+
+    <button onclick="login()">Entrar</button>
+  </div>
+
+  <!-- FORMULARIO PRINCIPAL -->
+  <div class="contenedor" id="formulario" style="display:none;">
+    <h1>Jóvenes Saludables, Mentes Brillantes</h1>
+
+    <!-- imágenes de referencia -->
+    <div class="imagenes">
+      <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="Frutas">
+      <img src="https://cdn-icons-png.flaticon.com/512/2965/2965567.png" alt="Ejercicio">
+      <img src="https://cdn-icons-png.flaticon.com/512/3183/3183463.png" alt="Descanso">
+    </div>
+
+    <label for="alimentos">Alimentos consumidos:</label>
+    <textarea id="alimentos"></textarea>
+
+    <label for="descanso">Horas de sueño:</label>
+    <input type="number" id="descanso">
+
+    <label for="calorias">Calorías consumidas:</label>
+    <input type="number" id="calorias">
+
+    <label for="ejercicio">Ejercicio realizado:</label>
+    <input type="text" id="ejercicio">
+
+    <label for="estado">Cómo te sentiste hoy:</label>
+    <select id="estado">
+      <option>Feliz</option>
+      <option>Tranquilo</option>
+      <option>Cansado</option>
+      <option>Estresado</option>
+    </select>
+
+    <button onclick="guardar()">Guardar Registro</button>
+  </div>
+
+  <script>
+    function login() {
+      const usuario = document.getElementById("usuario").value;
+      const password = document.getElementById("password").value;
+      if (usuario === "zeyla" && password === "1234") {
+        document.getElementById("login").style.display = "none";
+        document.getElementById("formulario").style.display = "block";
+      } else {
+        alert("Usuario o contraseña incorrectos ❌");
+      }
+    }
+
+    function guardar() {
+      alert("✅ Registro guardado correctamente. ¡Sigue con tu vida saludable!");
+    }
+  </script>
+</body>
+</html>
