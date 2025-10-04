@@ -16,7 +16,7 @@
 
     .contenedor {
       background: white;
-      width: 70%; /* más ancho */
+      width: 70%;
       max-width: 900px;
       padding: 25px;
       border-radius: 15px;
@@ -53,6 +53,7 @@
       border-radius: 8px;
       cursor: pointer;
       font-size: 16px;
+      margin: 5px;
     }
 
     button:hover {
@@ -116,6 +117,7 @@
     </select>
 
     <button onclick="guardar()">Guardar Registro</button>
+    <button onclick="cerrarSesion()">Cerrar Sesión</button>
   </div>
 
   <script>
@@ -132,6 +134,13 @@
 
     function guardar() {
       alert("✅ Registro guardado correctamente. ¡Sigue con tu vida saludable!");
+    }
+
+    function cerrarSesion() {
+      document.getElementById("formulario").style.display = "none";
+      document.getElementById("login").style.display = "block";
+      document.getElementById("usuario").value = "";
+      document.getElementById("password").value = "";
     }
   </script>
 </body>
